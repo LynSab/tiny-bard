@@ -1,5 +1,6 @@
 import { Image } from "expo-image";
-import { StyleSheet, Text, View } from "react-native";
+import { router } from "expo-router";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 
 type Props = {
   imageSource: string,
@@ -9,7 +10,9 @@ type Props = {
 export default function ImageViewer({ imageSource, imageText }: Props){
   return (
     <View style={styles.imageContainer}>
-      <Image source={imageSource} style={styles.image} />
+      <Pressable onPress={() => router.push(`/mediaPlayer?soundscape=${imageText}`)}>
+        <Image source={imageSource} style={styles.image} />
+      </ Pressable>
       <Text>{imageText}</Text>
     </View>
   )
@@ -17,13 +20,12 @@ export default function ImageViewer({ imageSource, imageText }: Props){
 
 const styles = StyleSheet.create({
   imageContainer: {
-    padding: 10,
-    margin: 10,
+    padding: 5,
+    margin: 5,
     flex: 1,
   },
   image: {
     width: 100,
     height: 100,
-    borderRadius: 18,
   },
 })
