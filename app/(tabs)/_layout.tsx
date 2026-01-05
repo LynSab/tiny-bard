@@ -43,6 +43,13 @@ export default function TabsLayout() {
         ),
       }} 
     />
+    <Tabs.Screen 
+      name="mediaPlayer" 
+      options={{
+        headerTitle: "Soundscape Player",
+        href: null
+      }} 
+    />
   </Tabs>
   );
 }
