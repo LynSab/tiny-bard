@@ -3,8 +3,8 @@ import { router } from "expo-router";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 
 type Props = {
-  imageSource: string,
-  imageText: string
+  imageSource: string;
+  imageText: string;
 }
 
 export default function ImageViewer({ imageSource, imageText }: Props){
